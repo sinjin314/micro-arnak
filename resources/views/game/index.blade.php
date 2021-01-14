@@ -29,8 +29,7 @@
 
 
             <tr>
-
-                    <!-- Second card (parent container's width changed using utility classes) -->
+                 <!-- Second card (parent container's width changed using utility classes) -->
                     <div class=" w-400  mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
                         <div class="card">
                             <h2 class="card-title">
@@ -42,14 +41,10 @@
                                 {{ $game->desc }}
                             </p>
                             <div class="text-right"> <!-- text-right = text-align: right -->
-                                <a href="#" class="btn">Read more</a>
+                                <a href="{{ route('games.show') }}" class="btn">Read more</a>
                             </div>
                         </div>
                     </div>
-
-                    </form>
-                </td>
-
             </tr>
         @endforeach
         </tbody>
