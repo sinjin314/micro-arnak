@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/admin/home', [
+    HomeController::class,
+    'adminHome'
+    ])->name('admin.home')
+      ->middleware('is_admin');
 
-Route::get('/', 'GameController@index')->name('game.index');
+Auth::routes();
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
