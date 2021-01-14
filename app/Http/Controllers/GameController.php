@@ -17,14 +17,14 @@ class GameController extends Controller
         }else{
             $game = Game::all();
         }
-        return view("games.index", ["games" => $game, "search" => $search]);
+        return view("game.index", ["games" => $game, "search" => $search]);
 
     }
 
 
     public function create()
     {
-        return view('games.create');
+        return view('game.create');
     }
 
 
@@ -51,13 +51,13 @@ class GameController extends Controller
 
     public function show(Game $game)
     {
-        return view('games.show')->with('games', $game);
+        return view('game.show')->with('games', $game);
     }
 
 
     public function edit(Game $game)
     {
-        return view('games.edit')->with([
+        return view('game.edit')->with([
             'game' => $game
         ]);
     }
@@ -86,7 +86,7 @@ class GameController extends Controller
         $game->nmoy = $request->get('nmoy');
 
         $game->save();
-        return redirect()->route("games.index");
+        return redirect()->route("game.index");
     }
 
 
@@ -94,7 +94,7 @@ class GameController extends Controller
     {
         $game->delete();
 
-        return redirect()->route('games.index')
+        return redirect()->route('game.index')
             ->with('success','Jeu supprimé.');
     }
 }

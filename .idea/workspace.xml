@@ -126,7 +126,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/game" />
+    <property name="last_opened_file_path" value="F:/GestionElevesPhp" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -155,6 +155,11 @@
       <workItem from="1610207399235" duration="1936000" />
       <workItem from="1610211651785" duration="1642000" />
       <workItem from="1610287165185" duration="3413000" />
+      <workItem from="1610399864806" duration="2123000" />
+      <workItem from="1610464026102" duration="2217000" />
+      <workItem from="1610483350268" duration="1758000" />
+      <workItem from="1610557917807" duration="812000" />
+      <workItem from="1610569243270" duration="2894000" />
     </task>
     <servers />
   </component>

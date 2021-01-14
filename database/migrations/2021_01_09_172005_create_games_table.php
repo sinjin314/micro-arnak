@@ -17,7 +17,10 @@ class CreateGamesTable extends Migration
             $table->increments('id');
             $table->string('name', 191);
             $table->string('studio', 191);
+            $table->text('genre');
+            $table->text('platform');
             $table->integer('pegi');
+            $table->integer('date');
             $table->double('price');
             $table->double('pht');
             $table->double('phm');

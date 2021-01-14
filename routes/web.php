@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('game', 'GameController@index')->name('game.index');
+
+Route::get('/', 'GameController@index')->name('game.index');

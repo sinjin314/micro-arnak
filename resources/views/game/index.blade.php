@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.template1')
 
 @section('content')
 
@@ -9,12 +9,8 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="float-right">
-                <a class="btn btn-outline-success" href="{{ route('games.create') }}"> Créer Nouveau jeu</a>
-            </div>
-        </div>
     </div>
+
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -24,28 +20,33 @@
 
     <table class="table">
         <thead class="thead-dark">
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Action</th>
-        </tr>
+
         </thead>
 
         <tbody>
         @foreach ($games as $game)
-            <tr>
-                <td>{{ $loop->index + 1 }}</td>
-                <td>{{ $game->name }}</td>
-                <td>{{ $game->studio }}</td>
-                <td>
-                    <form action="{{ route('games.destroy',$game->id) }}" method="POST">
-                        <a class="btn btn-outline-info btn-sm" href="{{ route('games.show',$game->id) }}">Show</a>
-                        <a class="btn btn-outline-primary btn-sm" href="{{ route('games.edit',$game->id) }}">Edit</a>
-                        @csrf
-                        @method('DELETE')
 
-                        <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+
+
+            <tr>
+
+                    <!-- Second card (parent container's width changed using utility classes) -->
+                    <div class=" w-400  mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                {{ $game->name }}
+                            </h2>
+                            <p>{{ $game->price }}€</p>
+                        <h6>{{ $game->studio }}</h6>
+                            <p class="text-muted">
+                                {{ $game->desc }}
+                            </p>
+                            <div class="text-right"> <!-- text-right = text-align: right -->
+                                <a href="#" class="btn">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+
                     </form>
                 </td>
 
