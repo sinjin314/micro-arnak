@@ -13,8 +13,14 @@
         <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
         <div class="sticky-alerts"></div>
 
-        @include('user.navbar')
-        @include('user.sidebar')
+        @if(auth()->user()->is_admin == 1)
+
+
+        @else
+
+            <h1>que fais tu la enculer ? </h1>
+
+        @endif
 
     </div>
 @endsection
