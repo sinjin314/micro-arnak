@@ -14,18 +14,18 @@ class CreateGamesTable extends Migration
     public function up()
     {
         Schema::create('games', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('name', 191);
             $table->string('studio', 191);
-            $table->text('genre');
+            $table->text('type');
             $table->text('platform');
             $table->integer('pegi');
-            $table->integer('date');
+            $table->date('date_publication');
             $table->double('price');
-            $table->double('pht');
-            $table->double('phm');
-            $table->text('desc');
-            $table->float('nmoy');
+            // $table->double('price_exlud');
+            // $table->double('phm');
+            $table->text('description');
+            $table->float('note');
             $table->timestamps();
         });
     }
