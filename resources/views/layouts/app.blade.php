@@ -22,6 +22,8 @@
     {{--  Half moon needed assets  --}}
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/24de196d7b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
