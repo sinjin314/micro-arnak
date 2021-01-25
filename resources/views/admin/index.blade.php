@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-    user index
+    Admin index
 @endsection
 
 
@@ -18,7 +18,7 @@
 
         @else
 
-            <h1>que fais tu la enculer ? </h1>
+            <h1>What the hell are you doing here ? </h1>
 
         @endif
 

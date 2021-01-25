@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-    user index
+    MicroArnak
 @endsection
 
 
@@ -12,9 +12,9 @@
         <!-- Sticky alerts (toasts), empty container -->
         <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
         <div class="sticky-alerts"></div>
-
         @include('user.navbar')
         @include('user.sidebar')
-
     </div>
 @endsection
+
+

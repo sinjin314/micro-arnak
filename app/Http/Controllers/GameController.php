@@ -8,16 +8,14 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
 
-    public function index(Request $request)
+    public function index()
     {
 
-        $search = $request->get("search");
-        if($search){
-            $game = Game::where('name', 'like', '%'.$search.'%')->orWhere('pegi', 'like', '%' . $search . '%')->orWhere('studio', 'like', '%' . $search . '%')->get();
-        }else{
-            $game = Game::all();
-        }
-        return view("game.index", ["games" => $game, "search" => $search]);
+        $games = Game::get();
+
+        return view('game.index')->with([
+            'games' => $games
+        ]);
 
     }
 

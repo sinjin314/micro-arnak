@@ -10,19 +10,22 @@
 
         </div>
         <!-- Sidebar links and titles -->
-        <h5 class="sidebar-title">Getting started</h5>
-        <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link active">Installation</a>
-        <a href="#" class="sidebar-link">CLI commands</a>
-        <br />
-        <h5 class="sidebar-title">Components</h5>
-        <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link">File explorer</a>
-        <a href="#" class="sidebar-link">Spreadsheet</a>
-        <a href="#" class="sidebar-link">Map</a>
-        <a href="#" class="sidebar-link">Messenger</a>
         @if( auth()->user()->is_admin == 1 )
-                <a href="#" class="sidebar-link" > admin pannel </a>
+            <a href="{{url('admin/home')}}" class="sidebar-link" > admin pannel </a>
+            <br />
         @endif
+        <h5 class="sidebar-title">Welcome back, {{ Auth::user()->name }} !</h5>
+        <div class="sidebar-divider"></div>
+        <a href="#" class="sidebar-link active">Home</a>
+        <a href="#" class="sidebar-link">Your cart</a>
+        <a href="#" class="sidebar-link">Your account</a>
+        <a href="#" class="sidebar-link">Messenger</a>
+        <br />
+        <h5 class="sidebar-title">MicroArnak</h5>
+        <div class="sidebar-divider"></div>
+        <a href="#" class="sidebar-link">Our games</a>
+        <a href="#" class="sidebar-link">About us</a>
+        <a href="#" class="sidebar-link">Contact support</a>
+
     </div>
 </div>
