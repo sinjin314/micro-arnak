@@ -33,7 +33,7 @@ class GameController extends Controller
         $request->validate([
                 'name' => 'required',
                 'studio' => 'required',
-                'pegi' => 'required',
+                //'pegi' => 'required',
                 'price' => 'required',
                 // 'pht' => 'required',
                 // 'phm' => 'required',
@@ -66,7 +66,7 @@ class GameController extends Controller
         $request->validate([
             'name' => 'required',
             'studio' => 'required',
-            'pegi' => 'required',
+            //'pegi' => 'required',
             'price' => 'required',
             // 'pht' => 'required',
             // 'phm' => 'required',

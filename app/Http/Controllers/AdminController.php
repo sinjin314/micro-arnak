@@ -10,4 +10,9 @@ class AdminController extends Controller
         {
                 return view("admin.index");
         }
+
+        public function createGame()
+        {
+                return view("admin.game.create");
+        }
 }
