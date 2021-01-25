@@ -34,7 +34,8 @@ class GameController extends Controller
             'name' => 'required',
             'studio' => 'required',
             'pegi' => 'required',
-            'plateform' => 'required',
+            'genre' => 'required',
+            'platform' => 'required',
             'price' => 'required',
             'date' => 'required',
             'pht' => 'required',
@@ -46,7 +47,7 @@ class GameController extends Controller
 
         Game::create($request->all());
 
-        return redirect()->route('game.index')
+        return redirect()->route('games.index')
             ->with('success','Game created successfully.');
     }
 
