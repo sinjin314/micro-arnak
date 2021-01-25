@@ -25,3 +25,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'GameController@index')->name('games.index');
 Route::get('games', 'GameController@show')->name('games.show');
+
+Route::resources([
+        'admin' => 'AdminController'
+]);

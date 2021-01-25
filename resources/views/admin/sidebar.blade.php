@@ -7,6 +7,7 @@
             <div class="mt-10 font-size-12"> <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
                 <button class="btn btn-success mr-5" type="submit">search</button>
             </div>
+
         </div>
         <!-- Sidebar links and titles -->
         <h5 class="sidebar-title">Getting started</h5>
@@ -20,8 +21,6 @@
         <a href="#" class="sidebar-link">Spreadsheet</a>
         <a href="#" class="sidebar-link">Map</a>
         <a href="#" class="sidebar-link">Messenger</a>
-        @if( auth()->user()->is_admin == 1 )
-                <a href="{{ route('admin.index')}}" class="sidebar-link" > admin pannel </a>
-        @endif
+        
     </div>
 </div>
