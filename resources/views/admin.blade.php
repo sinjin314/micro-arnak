@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Dashboard</div>
-
+                    <a class="btn btn-outline-success" href="{{ route('games.create') }}"> Create New game</a>
                     <div class="card-body">
                         @if(auth()->user()->is_admin == 1)
                             <a href="{{url('admin/routes')}}">Admin</a>
