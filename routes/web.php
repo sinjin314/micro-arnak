@@ -20,8 +20,10 @@ Route::get('/admin/home', [
     ])->name('admin.home')
       ->middleware('is_admin');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('/', 'GameController@index')->name('games.index');
 Route::get('games', 'GameController@show')->name('games.show');
+Route::get('game', 'GameController@create')->name('games.create');
+Route::post('game', 'GameController@store')->name('games.store');
