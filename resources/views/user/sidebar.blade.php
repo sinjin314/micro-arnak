@@ -14,7 +14,8 @@
             <a href="{{url('admin/home')}}" class="sidebar-link" > admin pannel </a>
             <br />
         @endif
-        <h5 class="sidebar-title">Welcome back, {{ Auth::user()->name }} !</h5>
+        <h5 class="sidebar-title">{{ Auth::user()->name }}, You are connected !</h5>
+        <a class="btn btn-success mr-5" href="{{ route('games.index') }}" >Enter on site</a>
         <div class="sidebar-divider"></div>
         <a href="#" class="sidebar-link active">Home</a>
         <a href="#" class="sidebar-link">Your cart</a>
@@ -23,7 +24,7 @@
         <br />
         <h5 class="sidebar-title">MicroArnak</h5>
         <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link">Our games</a>
+        <a href="{{ route('games.index') }}" class="sidebar-link">Our games</a>
         <a href="#" class="sidebar-link">About us</a>
         <a href="#" class="sidebar-link">Contact support</a>
 

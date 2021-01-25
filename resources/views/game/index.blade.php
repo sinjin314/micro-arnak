@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="row mt-3" style="margin-left: 40%">
+    <div class="row mt-3" style="margin-left: 40%; margin-top: 5%">
         <div class="col-md-8">
             <div class="float-left" >
                 <h2 >Liste des jeux</h2>

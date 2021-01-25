@@ -4,7 +4,6 @@
     MicroArnak
 @endsection
 
-
 @section('body')
     <div class="page-wrapper with-navbar with-sidebar">
 
@@ -15,6 +14,7 @@
         @include('user.navbar')
         @include('user.sidebar')
     </div>
+
 @endsection
 
 

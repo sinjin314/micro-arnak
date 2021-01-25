@@ -5,7 +5,7 @@
         <button class="btn" type="button" onclick="halfmoon.toggleSidebar()">Toggle sidebar</button>
     </div>
     <!-- Navbar brand -->
-    <a href="#" class="navbar-brand">
+    <a href="{{ route('games.index') }}" class="navbar-brand">
         <img src="https://www.gethalfmoon.com/static/site/img/fake-logo.svg" alt="...">
         Micro-Arnak
     </a>
