@@ -10,9 +10,9 @@
 
         </div>
         <!-- Sidebar links and titles -->
-        <h5 class="sidebar-title">Getting started</h5>
+        <h5 class="sidebar-title">Game</h5>
         <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link active">Installation</a>
+        <a href="{{ route('admin.create.game')}}" class="sidebar-link active">create</a>
         <a href="#" class="sidebar-link">CLI commands</a>
         <br />
         <h5 class="sidebar-title">Components</h5>
@@ -21,6 +21,6 @@
         <a href="#" class="sidebar-link">Spreadsheet</a>
         <a href="#" class="sidebar-link">Map</a>
         <a href="#" class="sidebar-link">Messenger</a>
-        
+
     </div>
 </div>

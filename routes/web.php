@@ -27,7 +27,8 @@ Route::get('/', 'GameController@index')->name('games.index');
 Route::get('games', 'GameController@show')->name('games.show');
 
 Route::resources([
-        'admin' => 'AdminController'
+        'admin' => 'AdminController',
+        'game' => 'GameController'
 ]);
 
 

@@ -25,7 +25,7 @@ class CreateGamesTable extends Migration
             // $table->double('price_exlud');
             // $table->double('phm');
             $table->text('description');
-            $table->float('note');
+            $table->float('note')->nullable();
             $table->timestamps();
         });
     }

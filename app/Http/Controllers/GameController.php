@@ -10,7 +10,6 @@ class GameController extends Controller
 
     public function index(Request $request)
     {
-
         $search = $request->get("search");
         if($search){
             $game = Game::where('name', 'like', '%'.$search.'%')->orWhere('pegi', 'like', '%' . $search . '%')->orWhere('studio', 'like', '%' . $search . '%')->get();
@@ -33,25 +32,35 @@ class GameController extends Controller
         $request->validate([
                 'name' => 'required',
                 'studio' => 'required',
-                //'pegi' => 'required',
+                'pegi' => 'required',
                 'price' => 'required',
-                // 'pht' => 'required',
-                // 'phm' => 'required',
+                'type' => 'required',
+                'platform' => 'required',
+                'date_publication' => 'required',
                 'description' => 'required'
         ]);
 
         Game::create($request->all());
+//
+//        $game = new Game();
+//
+//        $game->name = $request->get('name');
+//        $game->studio = $request->get('studio');
+//        $game->pegi = $request->get('pegi');
+//        $game->price = $request->get('price');
+//        $game->desc = $request->get('description');
+//        $game->nmoy = $request->get('note');
+//
+//        $game->save();
 
         return redirect()->route('game.index')
             ->with('success','Game created successfully.');
     }
 
-
     public function show(Game $game)
     {
         return view('game.show')->with('games', $game);
     }
-
 
     public function edit(Game $game)
     {
@@ -66,10 +75,11 @@ class GameController extends Controller
         $request->validate([
             'name' => 'required',
             'studio' => 'required',
-            //'pegi' => 'required',
+            'pegi' => 'required',
             'price' => 'required',
-            // 'pht' => 'required',
-            // 'phm' => 'required',
+            'type' => 'required',
+            'platform' => 'required',
+            'date_publication' => 'required',
             'description' => 'required'
         ]);
 
@@ -78,10 +88,10 @@ class GameController extends Controller
         $game->studio = $request->get('studio');
         $game->pegi = $request->get('pegi');
         $game->price = $request->get('price');
-        // $game->pht = $request->get('pht');
-        // $game->phm = $request->get('phm');
-        $game->desc = $request->get('description');
-        $game->nmoy = $request->get('note');
+        $game->type = $request->get('type');
+        $game->description = $request->get('description');
+        $game->platform = $request->get('platform');
+        $game->date_publication = $request->get('date_publication');
 
         $game->save();
         return redirect()->route("game.index");
