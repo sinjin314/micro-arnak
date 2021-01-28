@@ -32,4 +32,5 @@ Route::resources([
 ]);
 
 
-Route::get('/admin/game/create', 'AdminController@createGame' )->name('admin.create.game');
+Route::get('/admin/game/create', 'AdminController@createGame' )->name('admin.game.create');
+Route::get('/admin/game/list', 'AdminController@getGames')->name('admin.game.list');

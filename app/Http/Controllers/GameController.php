@@ -41,17 +41,6 @@ class GameController extends Controller
         ]);
 
         Game::create($request->all());
-//
-//        $game = new Game();
-//
-//        $game->name = $request->get('name');
-//        $game->studio = $request->get('studio');
-//        $game->pegi = $request->get('pegi');
-//        $game->price = $request->get('price');
-//        $game->desc = $request->get('description');
-//        $game->nmoy = $request->get('note');
-//
-//        $game->save();
 
         return redirect()->route('game.index')
             ->with('success','Game created successfully.');

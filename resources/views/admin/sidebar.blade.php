@@ -12,8 +12,8 @@
         <!-- Sidebar links and titles -->
         <h5 class="sidebar-title">Game</h5>
         <div class="sidebar-divider"></div>
-        <a href="{{ route('admin.create.game')}}" class="sidebar-link active">create</a>
-        <a href="#" class="sidebar-link">CLI commands</a>
+        <a href="{{ route('admin.game.create')}}" class="sidebar-link active">create</a>
+        <a href="{{ route('admin.game.list') }}" class="sidebar-link">List games</a>
         <br />
         <h5 class="sidebar-title">Components</h5>
         <div class="sidebar-divider"></div>
