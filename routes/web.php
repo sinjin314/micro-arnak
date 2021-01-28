@@ -28,3 +28,4 @@ Route::get('/', 'GameController@index')->name('games.index');
 Route::get('games', 'GameController@show')->name('games.show');
 Route::get('game', 'GameController@create')->name('games.create');
 Route::post('game', 'GameController@store')->name('games.store');
+
