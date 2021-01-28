@@ -31,18 +31,13 @@ class GameController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'studio' => 'required',
-            'pegi' => 'required',
-            'genre' => 'required',
-            'platform' => 'required',
-            'price' => 'required',
-            'date' => 'required',
-            'pht' => 'required',
-            'phm' => 'required',
-            'desc' => 'required',
-            'nmoy' => 'required'
-
+                'name' => 'required',
+                'studio' => 'required',
+                'pegi' => 'required',
+                'price' => 'required',
+                // 'pht' => 'required',
+                // 'phm' => 'required',
+                'description' => 'required'
         ]);
 
         Game::create($request->all());
@@ -73,25 +68,24 @@ class GameController extends Controller
             'studio' => 'required',
             'pegi' => 'required',
             'price' => 'required',
-            'pht' => 'required',
-            'phm' => 'required',
-            'desc' => 'required',
-            'nmoy' => 'required'
+            // 'pht' => 'required',
+            // 'phm' => 'required',
+            'description' => 'required'
         ]);
+
         $game = Game::find($game->id);
         $game->name = $request->get('name');
         $game->studio = $request->get('studio');
         $game->pegi = $request->get('pegi');
         $game->price = $request->get('price');
-        $game->pht = $request->get('pht');
-        $game->phm = $request->get('phm');
-        $game->desc = $request->get('desc');
-        $game->nmoy = $request->get('nmoy');
+        // $game->pht = $request->get('pht');
+        // $game->phm = $request->get('phm');
+        $game->desc = $request->get('description');
+        $game->nmoy = $request->get('note');
 
         $game->save();
         return redirect()->route("game.index");
     }
-
 
     public function destroy(Game $game)
     {
