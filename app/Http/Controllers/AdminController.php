@@ -25,4 +25,13 @@ class AdminController extends Controller
                'games' => $games
             ]);
         }
+
+        public function editGame(Game $game)
+        {
+            return view('admin.game.edit')->with([
+                'game' => $game
+            ]);
+        }
+
+
 }
