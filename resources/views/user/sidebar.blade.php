@@ -9,12 +9,19 @@
             </div>
         </div>
         <!-- Sidebar links and titles -->
-        <h5 class="sidebar-title">Getting started</h5>
+        @if( auth()->user()->is_admin == 1 )
+            <a href="{{url('admin/home')}}" class="sidebar-link" > admin pannel </a>
+            <br />
+        @endif
+        <h5 class="sidebar-title">{{ Auth::user()->name }}, You are connected !</h5>
+        <a class="btn btn-success mr-5" href="{{ route('games.index') }}" >Enter on site</a>
         <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link active">Installation</a>
-        <a href="#" class="sidebar-link">CLI commands</a>
+        <a href="#" class="sidebar-link active">Home</a>
+        <a href="#" class="sidebar-link">Your cart</a>
+        <a href="#" class="sidebar-link">Your account</a>
+        <a href="#" class="sidebar-link">Messenger</a>
         <br />
-        <h5 class="sidebar-title">Components</h5>
+        <h5 class="sidebar-title">MicroArnak</h5>
         <div class="sidebar-divider"></div>
         <a href="#" class="sidebar-link">File explorer</a>
         <a href="#" class="sidebar-link">Spreadsheet</a>

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
 
-    public function index(Request $request)
+    public function index()
     {
         $search = $request->get("search");
         if($search){
@@ -17,6 +17,10 @@ class GameController extends Controller
             $game = Game::all();
         }
         return view("game.index", ["games" => $game, "search" => $search]);
+
+        return view('game.index')->with([
+            'games' => $games
+        ]);
 
     }
 
