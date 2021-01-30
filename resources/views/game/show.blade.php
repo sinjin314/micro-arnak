@@ -34,13 +34,13 @@
         <div class="col-md-12">
             <div class="form-group">
                 <strong>Note:</strong>
-                {{ $games->nmoy }}/10
+                {{ $games->note }}/10
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
-                {{ $games->desc }}
+                {{ $games->description }}
             </div>
         </div>
 

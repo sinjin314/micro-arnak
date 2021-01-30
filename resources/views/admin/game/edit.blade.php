@@ -1,11 +1,11 @@
 @extends('admin.template')
 
 @section('title')
-         dashboard
+    edit game
 @endsection
 
 @section('content')
 
-
+    @include('game.edit')
 
 @endsection

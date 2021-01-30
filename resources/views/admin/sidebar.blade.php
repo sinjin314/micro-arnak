@@ -7,12 +7,13 @@
             <div class="mt-10 font-size-12"> <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
                 <button class="btn btn-success mr-5" type="submit">search</button>
             </div>
+
         </div>
         <!-- Sidebar links and titles -->
-        <h5 class="sidebar-title">Getting started</h5>
+        <h5 class="sidebar-title">Game</h5>
         <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link active">Installation</a>
-        <a href="#" class="sidebar-link">CLI commands</a>
+        <a href="{{ route('admin.game.create')}}" class="sidebar-link active">create</a>
+        <a href="{{ route('admin.game.list') }}" class="sidebar-link">List games</a>
         <br />
         <h5 class="sidebar-title">Components</h5>
         <div class="sidebar-divider"></div>
@@ -20,8 +21,6 @@
         <a href="#" class="sidebar-link">Spreadsheet</a>
         <a href="#" class="sidebar-link">Map</a>
         <a href="#" class="sidebar-link">Messenger</a>
-        @if( auth()->user()->is_admin == 1 )
-                <a href="{{ route('admin.index')}}" class="sidebar-link" > admin pannel </a>
-        @endif
+
     </div>
 </div>
