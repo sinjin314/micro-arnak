@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $search = $request->get("search");
         if($search){
@@ -34,6 +34,7 @@ class GameController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+                'id' => 'required',
                 'name' => 'required',
                 'studio' => 'required',
                 'pegi' => 'required',
@@ -66,6 +67,7 @@ class GameController extends Controller
     public function update(Request $request, Game $game)
     {
         $request->validate([
+            'id' => 'required',
             'name' => 'required',
             'studio' => 'required',
             'pegi' => 'required',

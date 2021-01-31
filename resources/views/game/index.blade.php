@@ -38,6 +38,11 @@
                                     <p class="text-muted">
                                         {{ $game->desc }}
                                     </p>
+                                    <form action="{{ route('cart.store') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="game_id" value="{{ $game->id }}">
+                                        <button type="submit" class="btn btn-success">add to cart</button>
+                                    </form>
                                     <div class="text-right"> <!-- text-right = text-align: right -->
                                         <a href="{{ route('games.show') }}" class="btn">Read more</a>
                                     </div>
