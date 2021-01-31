@@ -2,7 +2,9 @@
 
 @section('content')
     @if (Cart::count() > 0)
-        <div class="px-4 px-lg-0">
+
+        <div class="px-4 px-lg-0" style="margin-top: 5%">
+            <h1 style="text-align: center">Votre panier</h1>
             <div class="pb-5">
                 <div class="container">
                     <div class="row">
@@ -33,7 +35,7 @@
                                                 <div class="p-2">
                                                     <img src="{{ $games->model->image }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                     <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="{{ route('games.show') }}" class="text-dark d-inline-block align-middle">{{ $games->model->title }}</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category:</span>
+                                                        <h5 class="mb-0"> <a href="{{ route('games.show') }}" class="text-dark d-inline-block align-middle">{{ $games->model->name }}</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: {{ $games->model->genre }}</span>
                                                     </div>
                                                 </div>
                                             </th>
@@ -79,11 +81,11 @@
                             <div class="p-4">
                                 <p class="font-italic mb-4">Les frais éventuels de livraison seront calculés suivant les informations que vous avez transmises.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous-total </strong><strong>{{ getPrice(Cart::subtotal()) }}</strong></li>
+                                   <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous-total </strong><strong>{{ Cart::subtotal() }}</strong></li>
                                     {{-- <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li> --}}
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong>{{ getPrice(Cart::tax()) }}</strong></li>
+                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong>{{ Cart::tax() }}</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                                        <h5 class="font-weight-bold">{{ getPrice(Cart::total()) }}</h5>
+                                        <h5 class="font-weight-bold">{{ Cart::total() }}</h5>
                                     </li>
                                 </ul><a href="{{ route('checkout.index') }}" class="btn btn-dark rounded-pill py-2 btn-block"><i class="fa fa-credit-card" aria-hidden="true"></i> Passer à la caisse</a>
                             </div>

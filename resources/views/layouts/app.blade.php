@@ -49,23 +49,23 @@
 
 
             @if(auth()->user())
-
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
                 <a class="btn btn-danger mr-5" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     logout
                 </a>
+                <a href="{{ route("cart.index") }}" class="btn btn-success mr-5">Cart</a>
+                <button class="btn mr-5" type="button" onclick="halfmoon.toggleDarkMode()"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
             @else
                 <a href="{{ route("login") }}" class="btn btn-primary mr-5">login</a>
 
                 <a href="{{ route("register") }}" class="btn btn-secondary mr-5">register</a>
             @endif
-            <a href="{{ route("cart.index") }}" class="btn btn-success mr-5">Cart</a>
-            <button class="btn mr-5" type="button" onclick="halfmoon.toggleDarkMode()"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
+
         </div>
     </nav>
     @if(auth()->user())

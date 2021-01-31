@@ -42,3 +42,10 @@ Route::get('admin/game/edit', 'AdminController@editGame')->name('admin.game.edit
 Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter', 'CartController@store')->name('cart.store');
 Route::delete('/panier/{rowId}', 'CartController@destroy')->name('cart.destroy');
+
+Route::get('/paiement', 'CheckoutController@index')->name('checkout.index');
+Route::post('/paiement', 'CheckoutController@store')->name('checkout.store');
+Route::get('/merci', function () {
+    return view('checkout.thankyou');
+});
+
