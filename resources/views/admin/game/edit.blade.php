@@ -1,7 +1,7 @@
 @extends('admin.template')
 
 @section('title')
-    edit game
+    Edit game
 @endsection
 
 @section('content')

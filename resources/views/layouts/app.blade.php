@@ -86,10 +86,9 @@
                 @endif
                 <h5 class="sidebar-title">Welcome back, {{ Auth::user()->name }} !</h5>
                 <div class="sidebar-divider"></div>
-                <a href="#" class="sidebar-link active">Home</a>
-                <a href="#" class="sidebar-link">Your cart</a>
-                <a href="#" class="sidebar-link">Your account</a>
-                <a href="#" class="sidebar-link">Messenger</a>
+                <a href="{{ route('games.index') }}" class="sidebar-link active">Home</a>
+                <a href="{{ route('cart.index') }}" class="sidebar-link">Your cart</a>
+                <a href="{{ route('home') }}" class="sidebar-link">Your account</a>
                 <br />
                 <h5 class="sidebar-title">MicroArnak</h5>
                 <div class="sidebar-divider"></div>

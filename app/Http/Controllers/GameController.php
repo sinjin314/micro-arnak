@@ -34,15 +34,14 @@ class GameController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-                'id' => 'required',
                 'name' => 'required',
                 'studio' => 'required',
                 'pegi' => 'required',
                 'price' => 'required',
-                'type' => 'required',
+                'genre' => 'required',
                 'platform' => 'required',
-                'date_publication' => 'required',
-                'description' => 'required'
+                'date' => 'required',
+                'desc' => 'required'
         ]);
 
         Game::create($request->all());

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/admin/home', [
+Route::get('/admin/', [
     HomeController::class,
     'adminHome'
     ])->name('admin.home')

@@ -17,14 +17,14 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->string('name', 191);
             $table->string('studio', 191);
-            $table->text('type');
-            $table->text('platform');
+            $table->string('type');
+            $table->string('platform');
             $table->integer('pegi');
             $table->date('date_publication');
             $table->double('price');
             // $table->double('price_exlud');
             // $table->double('phm');
-            $table->text('description');
+            $table->varchar('description');
             $table->float('note')->nullable();
             $table->timestamps();
         });
