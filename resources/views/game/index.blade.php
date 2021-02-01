@@ -35,6 +35,7 @@
                                     </h2>
                                     <p>{{ $game->price }}€</p>
                                 <h6>{{ $game->studio }}</h6>
+                                    <h6>{{ $game->pegi }}</h6>
                                     <p class="text-muted">
                                         {{ $game->desc }}
                                     </p>

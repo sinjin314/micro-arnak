@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Arr;
 
 class CheckoutController extends Controller

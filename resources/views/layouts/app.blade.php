@@ -57,7 +57,7 @@
                                                      document.getElementById('logout-form').submit();">
                     logout
                 </a>
-                <a href="{{ route("cart.index") }}" class="btn btn-success mr-5">Cart</a>
+                <a href="{{ route("cart.index") }}" class="btn btn-success mr-5" >Cart</a>
                 <button class="btn mr-5" type="button" onclick="halfmoon.toggleDarkMode()"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
 
             @else
