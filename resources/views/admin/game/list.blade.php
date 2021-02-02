@@ -6,34 +6,38 @@
 
 @section('content')
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Game</th>
-                <th>Price</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-    </table>
+        <div class="container-fluid">
+          <div class="row m-10">
+            <div class="col-sm"><b>Game</b></div>
+            <div class="col-sm"><b>Price</b></div>
+            <div class="col-sm"><b>Action</b></div>
+          </div>
 
-    <tbody>
-        @foreach ( $games as $game )
-            <tr>
-                <td> {{ $game->name }} </td>
-                <td> {{ $game->price }} </td>
-                <td>
-                    <form action="#" method="POST">
+          @foreach ( $games as $game )
+                  <div class="row m-10">
+                    <div class="col-sm">{{ $game->name }}</div>
+                    <div class="col-sm">{{ $game->price }}</div>
+                    <div class="col-sm">
+                            <form action="{{ route('admin.game.show')}}" method="get">
+                                   <input type="hidden"  name="id" value="{{$game->id}}"> </input>
+                                   <td><button class="btn btn-primary"> show </button></td>
+                            </form>
 
-                        <td><button class="btn btn-primary" type="button" > show </button></td>
-                        <td><button class="btn btn-secondary" type="button" href="{{ route('admin.game.edit'), $game->id }}" > edit </button></td>
+                            <form action="{{ route('admin.game.edit')}}" method="get">
+                                   <input type="hidden" name="id" value="{{$game->id}}"> </input>
+                                   <td><button class="btn btn-secondary"> edit </button></td>
+                            </form>
 
-                        @csrf
-                        @method('DELETE')
-                        <td><button class="btn btn-danger"> delete </button></td>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-    </tbody>
+                            <form action="{{ route('game.destroy', $game)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <td><button class="btn btn-danger"> delete </button></td>
+                            </form>
+                    </div>
+                  </div>
+
+          @endforeach
+        </div>
+
 
 @endsection

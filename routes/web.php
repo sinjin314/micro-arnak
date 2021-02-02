@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::delete('/game/destroy', 'GameController@destroy')->name('game.destroy');
+
 Route::get('/admin/home', [
     HomeController::class,
     'adminHome'
@@ -29,6 +31,7 @@ Route::get('games', 'GameController@show')->name('games.show');
 Route::get('game', 'GameController@create')->name('games.create');
 Route::post('game', 'GameController@store')->name('games.store');
 
+
 Route::resources([
         'admin' => 'AdminController',
         'game' => 'GameController'
@@ -37,7 +40,8 @@ Route::resources([
 
 Route::get('/admin/game/create', 'AdminController@createGame' )->name('admin.game.create');
 Route::get('/admin/game/list', 'AdminController@getGames')->name('admin.game.list');
-Route::get('admin/game/edit', 'AdminController@editGame')->name('admin.game.edit');
+Route::get('/admin/game/edit', 'AdminController@editGame')->name('admin.game.edit');
+Route::get('/admin/game/show', 'AdminController@showGame')->name('admin.game.show');
 
 Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter', 'CartController@store')->name('cart.store');

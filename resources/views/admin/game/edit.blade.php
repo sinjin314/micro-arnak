@@ -6,6 +6,6 @@
 
 @section('content')
 
-    @include('game.edit')
+    @include('game.form')
 
 @endsection

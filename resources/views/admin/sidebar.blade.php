@@ -15,12 +15,10 @@
         <a href="{{ route('admin.game.create')}}" class="sidebar-link active">create</a>
         <a href="{{ route('admin.game.list') }}" class="sidebar-link">List games</a>
         <br />
-        <h5 class="sidebar-title">Components</h5>
+
+        <h5 class="sidebar-title">User</h5>
         <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link">File explorer</a>
-        <a href="#" class="sidebar-link">Spreadsheet</a>
-        <a href="#" class="sidebar-link">Map</a>
-        <a href="#" class="sidebar-link">Messenger</a>
+        <a href="#" class="sidebar-link">List</a>
 
     </div>
 </div>
