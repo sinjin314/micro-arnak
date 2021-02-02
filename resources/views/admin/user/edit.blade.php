@@ -12,6 +12,7 @@
                 <h2>Editer un utilisateur</h2>
             </div>
         </div>
+        <br>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -24,18 +25,18 @@
         </div>
     @endif
 
-    <form action="{{ route('user.update', $users->id) }}" method="POST">
+    <form action="{{ route('admin.user.update', $user->id) }}" method="POST">
         @csrf
         @method('PUT')
 
         <div class="form-group">
             <label for="name">Nom:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nom" value="{{ $users->name }}">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nom" value="{{ $user->name }}" required>
         </div>
 
         <div class="form-group">
-            <label for="genre">email:</label>
-            <input type="text" class="form-control" id="genre" name="genre" placeholder="Genre" value="{{ $users->email }}">
+            <label for="email">email:</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="email" value="{{ $user->email }}" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

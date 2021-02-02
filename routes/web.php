@@ -28,6 +28,7 @@ Route::get('/', 'GameController@index')->name('games.index');
 Route::get('games', 'GameController@show')->name('games.show');
 Route::get('game', 'GameController@create')->name('games.create');
 Route::post('game', 'GameController@store')->name('games.store');
+Route::put('game', 'GameController@update')->name('games.update');
 
 Route::resources([
         'admin' => 'AdminController',
@@ -41,6 +42,12 @@ Route::get('admin/game/edit', 'AdminController@editGame')->name('admin.game.edit
 Route::put('/admin/{game}', 'AdminController@update')->name('admin.game.update');
 Route::get('/admin/user/list', 'AdminController@getuser')->name('admin.user.list');
 Route::get('/admin/user/edit', 'AdminController@editUser')->name('admin.user.edit');
+Route::put('/admin/{user}', 'AdminController@updateUser')->name('admin.user.update');
+
+
+Route::get('/admin/user/edit/{id}', 'userManagementController@edit')->name('admin.user.edit');
+Route::put('/admin/user/{id}', 'userManagementController@update')->name('admin.user.update');
+
 
 Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter', 'CartController@store')->name('cart.store');
