@@ -33,7 +33,7 @@
         @else
             <a href="{{ route("login") }}" class="btn btn-primary mr-5">login</a>
 
-            <a href="{{ route("register") }}" class="btn btn-secondary mr-5">register</i></a>
+            <a href="{{ route("register") }}" class="btn btn-secondary mr-5">register</a>
         @endif
 
         <button class="btn mr-5" type="button" onclick="halfmoon.toggleDarkMode()">darkmode</button>

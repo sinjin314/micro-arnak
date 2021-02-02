@@ -71,10 +71,10 @@ class GameController extends Controller
             'studio' => 'required',
             'pegi' => 'required',
             'price' => 'required',
-            'type' => 'required',
+            'genre' => 'required',
             'platform' => 'required',
-            'date_publication' => 'required',
-            'description' => 'required'
+            'date' => 'required',
+            'desc' => 'required'
         ]);
 
         $game = Game::find($game->id);

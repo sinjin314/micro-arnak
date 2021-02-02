@@ -39,6 +39,10 @@
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom">
         </div>
         <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" id="image" name="image" placeholder="image">
+        </div>
+        <div class="form-group">
             <label for="studio">Studio:</label>
             <input type="text" class="form-control" id="studio" name="studio" placeholder="Studio">
         </div>
@@ -56,27 +60,19 @@
         </div>
         <div class="form-group">
             <label for="pegi">Pegi:</label>
-            <input type="text" class="form-control" id="pegi" name="pegi" placeholder="Pegi">
+            <input type="number" class="form-control" id="pegi" name="pegi" placeholder="Pegi">
         </div>
         <div class="form-group">
             <label for="price">Prix:</label>
-            <textarea class="form-control" id="address" name="price" placeholder="Prix"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="pht">Prix hors taxe:</label>
-            <textarea class="form-control" id="address" name="pht" placeholder="prix hors taxe"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="phm">Prix hors marge:</label>
-            <textarea class="form-control" id="address" name="phm" placeholder="Prix hors marge"></textarea>
+            <input type="number" class="form-control" id="address" name="price" placeholder="Prix">
         </div>
         <div class="form-group">
             <label for="date">Date de sortie:</label>
-            <textarea class="form-control" id="address" name="date" placeholder="Date de sortie"></textarea>
+            <input type="date" class="form-control" id="address" name="date" placeholder="Date de sortie">
         </div>
         <div class="form-group">
             <label for="nmoy">Note moyenne sur 10:</label>
-            <textarea class="form-control" id="address" name="nmoy" placeholder="Note moyenne sur 10"></textarea>
+            <input type="number" class="form-control" id="address" name="nmoy" placeholder="Note moyenne sur 10">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

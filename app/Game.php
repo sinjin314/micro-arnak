@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     protected $fillable = [
-        'id','name', 'price','description', 'studio','pegi','type', 'platform', 'date_publication'
+        'id','name','image', 'price', 'desc', 'studio','pegi','genre', 'platform', 'date', 'nmoy'
     ];
     public function getPrice()
     {

@@ -81,7 +81,7 @@
                 </div>
                 <!-- Sidebar links and titles -->
                 @if( auth()->user()->is_admin == 1 )
-                    <a href="{{url('admin/home')}}" class="sidebar-link" > admin pannel </a>
+                    <a href="{{url('/admin/')}}" class="sidebar-link" > admin pannel </a>
                     <br />
                 @endif
                 <h5 class="sidebar-title">Welcome back, {{ Auth::user()->name }} !</h5>

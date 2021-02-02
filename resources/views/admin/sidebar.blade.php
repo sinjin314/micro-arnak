@@ -12,8 +12,9 @@
         <!-- Sidebar links and titles -->
         <h5 class="sidebar-title">Game</h5>
         <div class="sidebar-divider"></div>
-        <a href="{{ route('admin.game.create')}}" class="sidebar-link active">create</a>
-        <a href="{{ route('admin.game.list') }}" class="sidebar-link">List games</a>
+        <a href="{{ route('admin.game.create')}}" class="sidebar-link active">Create a game</a>
+        <a href="{{ route('admin.game.list') }}" class="sidebar-link">Game List</a>
+        <a href="{{ route('admin.user.list') }}" class="sidebar-link">User List</a>
         <br />
         <h5 class="sidebar-title">Components</h5>
         <div class="sidebar-divider"></div>

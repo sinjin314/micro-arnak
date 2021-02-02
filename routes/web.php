@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/admin/', [
+Route::get('/admin/home', [
     HomeController::class,
     'adminHome'
     ])->name('admin.home')
@@ -38,6 +38,8 @@ Route::resources([
 Route::get('/admin/game/create', 'AdminController@createGame' )->name('admin.game.create');
 Route::get('/admin/game/list', 'AdminController@getGames')->name('admin.game.list');
 Route::get('admin/game/edit', 'AdminController@editGame')->name('admin.game.edit');
+Route::put('/admin/{game}', 'AdminController@update')->name('admin.game.update');
+Route::get('/admin/user/list', 'AdminController@getuser')->name('admin.user.list');
 
 Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter', 'CartController@store')->name('cart.store');
