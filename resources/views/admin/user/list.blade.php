@@ -26,6 +26,7 @@
                     @csrf
                     @method('DELETE')
                     <td><button class="btn btn-danger">Delete </button></td>
+                    <td><a class="btn btn-secondary" type="button" href="{{ route('admin.user.edit'), $user->id }}" > edit </a></td>
                 </div>
             </div>
         </tr>

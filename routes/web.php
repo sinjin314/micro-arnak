@@ -40,6 +40,7 @@ Route::get('/admin/game/list', 'AdminController@getGames')->name('admin.game.lis
 Route::get('admin/game/edit', 'AdminController@editGame')->name('admin.game.edit');
 Route::put('/admin/{game}', 'AdminController@update')->name('admin.game.update');
 Route::get('/admin/user/list', 'AdminController@getuser')->name('admin.user.list');
+Route::get('/admin/user/edit', 'AdminController@editUser')->name('admin.user.edit');
 
 Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter', 'CartController@store')->name('cart.store');

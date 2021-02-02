@@ -65,6 +65,27 @@ class AdminController extends Controller
             'users' => $users
         ]);
     }
+    public function editUser(User $user)
+    {
+        return view('admin.user.edit')->with([
+            'users' => $user
+        ]);
+    }
+    public function updateUser(Request $request, User $user)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+
+        ]);
+        $user = User::find($user->id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+
+
+        $user->save();
+        return redirect()->route("admin.user.list");
+    }
 
 
 }
