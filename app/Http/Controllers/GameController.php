@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $search = $request->get("search");
         if($search){
@@ -46,18 +46,18 @@ class GameController extends Controller
 
         Game::create($request->all());
 
-        return redirect()->route('games.index')
+        return redirect()->route('admin.index')
             ->with('success','Game created successfully.');
     }
 
     public function show(Game $game)
     {
-        return view('game.show')->with('games', $game);
+        return view('game.show')->with('game', $game);
     }
 
     public function edit(Game $game)
     {
-        return view('game.edit')->with([
+        return view('admin.game.edit')->with([
             'game' => $game
         ]);
     }
@@ -87,14 +87,13 @@ class GameController extends Controller
         $game->date_publication = $request->get('date_publication');
 
         $game->save();
-        return redirect()->route("game.index");
+        return redirect()->route("admin.game.list");
     }
 
     public function destroy(Game $game)
     {
         $game->delete();
 
-        return redirect()->route('game.index')
-            ->with('success','Jeu supprimé.');
+        return redirect()->back()->with('success','Jeu supprimé.');
     }
 }
