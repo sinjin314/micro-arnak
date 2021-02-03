@@ -7,7 +7,7 @@
     </div>
     <!-- Navbar brand -->
     <a href="{{ route('games.index') }}" class="navbar-brand">
-        <img src="https://www.gethalfmoon.com/static/site/img/fake-logo.svg" alt="...">
+        <img src="/assets/images/logo1.svg" alt="...">
         Micro-Arnak
     </a>
 

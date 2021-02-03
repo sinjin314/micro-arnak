@@ -34,15 +34,14 @@ class GameController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-                'id' => 'required',
                 'name' => 'required',
                 'studio' => 'required',
                 'pegi' => 'required',
                 'price' => 'required',
-                'type' => 'required',
+                'genre' => 'required',
                 'platform' => 'required',
-                'date_publication' => 'required',
-                'description' => 'required'
+                'date' => 'required',
+                'desc' => 'required'
         ]);
 
         Game::create($request->all());
@@ -56,41 +55,34 @@ class GameController extends Controller
         return view('game.show')->with('game', $game);
     }
 
-    public function edit(Game $game)
+    public function edit($id)
     {
-        return view('admin.game.edit')->with([
-            'game' => $game
-        ]);
+        $game = Game::find($id);
+
+        return view('admin.game.edit')
+            -> with('game', $game);
     }
 
 
     public function update(Request $request, Game $game)
     {
+
         $request->validate([
             'id' => 'required',
-            'name' => 'required',
-            'studio' => 'required',
-            'pegi' => 'required',
-            'price' => 'required',
-            'type' => 'required',
-            'platform' => 'required',
-            'date_publication' => 'required',
-            'description' => 'required'
         ]);
 
-        $game = Game::find($game->id);
-        $game->name = $request->get('name');
-        $game->studio = $request->get('studio');
-        $game->pegi = $request->get('pegi');
-        $game->price = $request->get('price');
-        $game->type = $request->get('type');
-        $game->description = $request->get('description');
-        $game->platform = $request->get('platform');
-        $game->date_publication = $request->get('date_publication');
-
-        $game->save();
-        return redirect()->route("admin.game.list");
+        $id = $request->get('id');
+        $test = Game::find($id);
+        $test->name=$request->name;
+        $test->price=$request->price;
+        $test->studio=$request->studio;
+        $test->pegi=$request->pegi;
+        $test->desc=$request->desc;
+        $test->genre=$request->genre;
+        $test->save();
+        return redirect()->route('admin.game.list');
     }
+
 
     public function destroy(Game $game)
     {

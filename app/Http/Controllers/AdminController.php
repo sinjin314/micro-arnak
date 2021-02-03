@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Game;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -25,8 +26,32 @@ class AdminController extends Controller
                'games' => $games
             ]);
         }
+        public function update(Request $request, Game $game)
+    {
+        $request->validate([
+            'name' => 'required',
+            'studio' => 'required',
+            'pegi' => 'required',
+            'price' => 'required',
+            'genre' => 'required',
+            'platform' => 'required',
+            'date' => 'required',
+            'desc' => 'required'
+        ]);
+        $game = Game::find($game->id);
+        $game->name = $request->get('name');
+        $game->studio = $request->get('studio');
+        $game->pegi = $request->get('pegi');
+        $game->price = $request->get('price');
+        $game->genre = $request->get('genre');
+        $game->platform = $request->get('platform');
+        $game->date = $request->get('date');
+        $game->desc = $request->get('desc');
 
-        public function editGame(Request $request)
+        $game->save();
+        return redirect()->route("games.index");
+    }
+        public function edit(Game $game)
         {
                 $search = $request->get("id");
                 if($search){
@@ -36,19 +61,38 @@ class AdminController extends Controller
                 }
 
             return view('admin.game.edit')->with([
-                'game' => $game
+                'games' => $game
             ]);
         }
+    public function getuser()
+    {
+        $users = User::all();
 
-        public function showGame(Request $request) {
-                $search = $request->get("id");
-                if($search){
-                        $game = Game::find($search);
-                } else {
-                        return redirect()->back();
-                }
+        return view('admin.user.list')->with([
+            'users' => $users
+        ]);
+    }
+    public function editUser(User $user)
+    {
+        return view('admin.user.edit')->with([
+            'users' => $user
+        ]);
+    }
+    public function updateUser(Request $request, User $user)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required'
 
-                return view('admin.game.show')->with('game', $game);
-        }
+        ]);
+        $user = User::find($user->id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+
+
+        $user->save();
+        return redirect()->route("admin.user.list");
+    }
+
 
 }

@@ -58,20 +58,9 @@
                     </div>
                     <div class="row p-4 bg-white rounded shadow-sm">
                         <div class="col-lg-6">
-                            <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Code coupon
-                            </div>
-                            <div class="p-4">
-                                <p class="font-italic mb-4">Si vous détenez un code Coupon, entrez-le dans le champ ci-dessous</p>
-                                <div class="input-group mb-4 border rounded-pill p-2">
-                                    <input type="text" placeholder="ABC-123" aria-describedby="button-addon3" class="form-control border-0">
-                                    <div class="input-group-append border-0">
-                                        <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Appliquer le coupon</button>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions pour le vendeur</div>
                             <div class="p-4">
-                                <p class="font-italic mb-4">Si vous souhaitez ajouter des précisions à votre commande, merci de les rentrer dans le champ ci-dessous</p>
+                                <p class="font-italic mb-4">Si vous souhaitez ajouter des précisions à votre commande,<br> merci de les rentrer dans le champ ci-dessous</p>
                                 <textarea name="" cols="30" rows="2" class="form-control"></textarea>
                             </div>
                         </div>

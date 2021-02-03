@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Favicon and title -->
-    <link rel="icon" href="path/to/fav.png">
+    <link rel="icon" href="assets/images/logo1.svg">
     <title>@yield('title')</title>
 
     <!-- Halfmoon CSS -->

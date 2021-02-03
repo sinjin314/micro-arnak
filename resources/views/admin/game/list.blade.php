@@ -1,7 +1,7 @@
 @extends('admin.template')
 
 @section('title')
-    list games
+    Game list
 @endsection
 
 @section('content')

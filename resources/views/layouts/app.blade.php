@@ -57,7 +57,7 @@
                                                      document.getElementById('logout-form').submit();">
                     logout
                 </a>
-                <a href="{{ route("cart.index") }}" class="btn btn-success mr-5">Cart</a>
+                <a href="{{ route("cart.index") }}" class="btn btn-success mr-5" >Cart</a>
                 <button class="btn mr-5" type="button" onclick="halfmoon.toggleDarkMode()"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
 
             @else
@@ -81,15 +81,14 @@
                 </div>
                 <!-- Sidebar links and titles -->
                 @if( auth()->user()->is_admin == 1 )
-                    <a href="{{url('admin/home')}}" class="sidebar-link" > admin pannel </a>
+                    <a href="{{url('/admin/')}}" class="sidebar-link" > admin pannel </a>
                     <br />
                 @endif
                 <h5 class="sidebar-title">Welcome back, {{ Auth::user()->name }} !</h5>
                 <div class="sidebar-divider"></div>
-                <a href="#" class="sidebar-link active">Home</a>
-                <a href="#" class="sidebar-link">Your cart</a>
-                <a href="#" class="sidebar-link">Your account</a>
-                <a href="#" class="sidebar-link">Messenger</a>
+                <a href="{{ route('games.index') }}" class="sidebar-link active">Home</a>
+                <a href="{{ route('cart.index') }}" class="sidebar-link">Your cart</a>
+                <a href="{{ route('home') }}" class="sidebar-link">Your account</a>
                 <br />
                 <h5 class="sidebar-title">MicroArnak</h5>
                 <div class="sidebar-divider"></div>

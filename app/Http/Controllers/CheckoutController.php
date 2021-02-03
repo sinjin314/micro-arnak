@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Arr;
 
 class CheckoutController extends Controller
@@ -23,7 +24,7 @@ class CheckoutController extends Controller
         Stripe::setApiKey('sk_test_3WteeitM6Wi4AK3SdJzBrm7300qGrAamxX');
 
         $intent = PaymentIntent::create([
-            'amount' => round(Cart::total()),
+            'amount' => round(Cart::total())*100,
             'currency' => 'eur'
         ]);
 
