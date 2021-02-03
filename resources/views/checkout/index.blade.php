@@ -38,12 +38,12 @@
 @section('extra-js')
     <script>
         //Suppression de la barre de navigation
-        document.getElementsByClassName('blog-header')[0].classList.add("d-none");
-        document.getElementsByClassName('nav-scroller')[0].classList.add("d-none");
+
 
         // Paiement Stripe
         var stripe = Stripe('pk_test_51IGZJHHvBQWV1bRV2d79MLw7V5vYoPX4SY42kww7D9fV7a7tcxrYMELROO0ISf7bfeVgasjEPdZGqEjpX8NHgdcd00kYyj5B1t');
         var elements = stripe.elements();
+        console.log(elements);
         var style = {
             base: {
                 color: "#32325d",

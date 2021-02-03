@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Arr;
+use App\Order;
 
 class CheckoutController extends Controller
 {

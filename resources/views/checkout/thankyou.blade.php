@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
     <div class="col-md-12">
@@ -7,7 +7,7 @@
             <p class="lead"><strong>Votre commande a été traitée avec succès</strong></p>
             <hr>
             <p class="lead">
-                <a class="btn btn-primary btn-sm" href="{{ route('products.index') }}" role="button">Continuer vers la boutique</a>
+                <a class="btn btn-primary btn-sm" href="{{ route('games.index') }}" role="button">Continuer vers la boutique</a>
             </p>
         </div>
     </div>
