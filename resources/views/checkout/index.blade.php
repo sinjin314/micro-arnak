@@ -9,15 +9,16 @@
 @endsection
 
 @section('content')
-<div class="col-md-12">
+<div class="col-md-12" style="margin-top: 5%">
     <a href="{{ route('cart.index') }}" class="btn btn-sm btn-secondary mt-3">Revenir au panier</a>
     <div class="row">
         <div class="col-md-6 mx-auto">
             <h4 class="text-center pt-5" style="margin-top: 5%">Procéder au paiement</h4>
+
             <form action="{{ route('checkout.store') }}" method="POST" class="my-4" id="payment-form">
                 @csrf
                 <div id="card-element">
-                <!-- Elements will create input elements here -->
+
                 </div>
 
                 <!-- We'll put the error messages in this element -->
@@ -39,14 +40,14 @@
     document.getElementsByClassName('nav-scroller')[0].classList.add("d-none");
 
     // Paiement Stripe
-    var stripe = Stripe('pk_test_7SgrmpMGeJlIACKBTE2YbTXF00Q3876Bck');
+    var stripe = Stripe('pk_test_51IGZJHHvBQWV1bRV2d79MLw7V5vYoPX4SY42kww7D9fV7a7tcxrYMELROO0ISf7bfeVgasjEPdZGqEjpX8NHgdcd00kYyj5B1t');
     var elements = stripe.elements();
     var style = {
         base: {
-        color: "#32325d",
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSmoothing: "antialiased",
-        fontSize: "16px",
+            color: "#32325d",
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSmoothing: "antialiased",
+            fontSize: "16px",
             "::placeholder": {
                 color: "#aab7c4"
             }
@@ -56,6 +57,7 @@
             iconColor: "#fa755a"
         }
     };
+
     var card = elements.create("card", { style: style });
     card.mount("#card-element");
     card.addEventListener('change', ({error}) => {

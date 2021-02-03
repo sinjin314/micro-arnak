@@ -21,7 +21,7 @@ class CheckoutController extends Controller
             return redirect()->route('games.index');
         }
 
-        Stripe::setApiKey('sk_test_3WteeitM6Wi4AK3SdJzBrm7300qGrAamxX');
+        Stripe::setApiKey('sk_test_51IGZJHHvBQWV1bRVBOYCG634qYcruUjzsYERrGZOe31J2bBbmy4e0Lf64QLkY3CPE7EXNEwMw2vQ9VxZY0nL1A7E00eEgshbr3');
 
         $intent = PaymentIntent::create([
             'amount' => round(Cart::total())*100,
