@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <div class="content-wrapper">
     <div class="row mt-3" style="margin-left: 40%; margin-top: 5%">
         <div class="col-md-8">
             <div class="float-left" >
@@ -30,6 +30,7 @@
                          <!-- Second card (parent container's width changed using utility classes) -->
                             <div class=" w-400  mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
                                 <div class="card">
+                                    <img src="{{ asset( 'storage/'.$game->image  )  }}">
                                     <h2 class="card-title">
                                         {{ $game->name }}
                                     </h2>
@@ -55,5 +56,5 @@
                     </tr>
                 @endforeach
         </div>
-
+    </div>
 @endsection

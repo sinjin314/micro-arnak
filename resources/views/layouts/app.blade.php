@@ -99,6 +99,9 @@
             </div>
         </div>
         @endif
+    <div class="content-wrapper">
+    @yield('content')
+    </div>
 </div>
         <script type="text/javascript">
             // Dark mode toggle demo
@@ -107,9 +110,9 @@
             }
         </script>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+
+
+
+
 </body>
 </html>
