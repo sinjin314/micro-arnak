@@ -48,6 +48,8 @@ Route::put('/admin/{user}', 'AdminController@updateUser')->name('admin.user.upda
 Route::get('/admin/user/edit/{id}', 'userManagementController@edit')->name('admin.user.edit');
 Route::put('/admin/user/{id}', 'userManagementController@update')->name('admin.user.update');
 
+Route::get('/admin/game/edit/{id}', 'GameController@edit')->name('admin.game.edit');
+Route::put('/admin/game/{id}', 'GameController@update')->name('admin.game.update');
 
 Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter', 'CartController@store')->name('cart.store');

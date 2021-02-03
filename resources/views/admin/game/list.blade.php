@@ -22,8 +22,8 @@
                             {{ $game->desc }}
                         </p>
                         <td><a class="btn btn-primary" type="button" href="{{ route('games.show') }}" > show </a></td>
-                        <td><a class="btn btn-secondary" type="button" href="{{ route('admin.game.edit'), $game->id }}" > edit </a></td>
-                        <a class="btn btn-primary" href="{{route('admin.user.edit', ['id' => $game->id])}}">Edit</a>
+                        <td><a class="btn btn-primary" href="{{route('admin.game.edit', ['id' => $game->id])}}">Edit</a></td>
+
                         @csrf
                         @method('DELETE')
                         <td><button class="btn btn-danger"> delete </button></td>

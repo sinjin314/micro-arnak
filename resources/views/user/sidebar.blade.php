@@ -16,17 +16,12 @@
         <h5 class="sidebar-title">{{ Auth::user()->name }}, You are connected !</h5>
         <a class="btn btn-success mr-5" href="{{ route('games.index') }}" >Enter on site</a>
         <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link active">Home</a>
-        <a href="#" class="sidebar-link">Your cart</a>
-        <a href="#" class="sidebar-link">Your account</a>
-        <a href="#" class="sidebar-link">Messenger</a>
+        <a href="{{ route('games.index') }}" class="sidebar-link active">Home</a>
+        <a href="{{ route('cart.index') }}" class="sidebar-link">Your cart</a>
+        <a href="" class="sidebar-link">Your account</a>
         <br />
         <h5 class="sidebar-title">MicroArnak</h5>
         <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link">File explorer</a>
-        <a href="#" class="sidebar-link">Spreadsheet</a>
-        <a href="#" class="sidebar-link">Map</a>
-        <a href="#" class="sidebar-link">Messenger</a>
         @if( auth()->user()->is_admin == 1 )
                 <a href="{{ route('admin.index')}}" class="sidebar-link" > admin pannel </a>
         @endif
