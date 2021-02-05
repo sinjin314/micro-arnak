@@ -16,12 +16,7 @@
         <a href="{{ route('admin.game.list') }}" class="sidebar-link">Game List</a>
         <a href="{{ route('admin.user.list') }}" class="sidebar-link">User List</a>
         <br />
-        <h5 class="sidebar-title">Components</h5>
-        <div class="sidebar-divider"></div>
-        <a href="#" class="sidebar-link">File explorer</a>
-        <a href="#" class="sidebar-link">Spreadsheet</a>
-        <a href="#" class="sidebar-link">Map</a>
-        <a href="#" class="sidebar-link">Messenger</a>
+
 
     </div>
 </div>

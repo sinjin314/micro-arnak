@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\facturemail;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,8 @@ use Stripe\PaymentIntent;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Arr;
 use App\Order;
+
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -27,7 +30,7 @@ class CheckoutController extends Controller
         Stripe::setApiKey('sk_test_51IGZJHHvBQWV1bRVBOYCG634qYcruUjzsYERrGZOe31J2bBbmy4e0Lf64QLkY3CPE7EXNEwMw2vQ9VxZY0nL1A7E00eEgshbr3');
 
         $intent = PaymentIntent::create([
-            'amount' => round(Cart::total())*100,
+            'amount' => intval(Cart::total()*100),
             'currency' => 'eur'
         ]);
 
@@ -56,6 +59,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        Mail::to(Auth::user())->send(new facturemail());
         $data = $request->json()->all();
 
         $order = new Order();
